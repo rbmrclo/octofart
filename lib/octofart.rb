@@ -2,6 +2,7 @@ require "octokit"
 require "octofart/version"
 require "octofart/config"
 require "octofart/client"
+require "octofart/parser"
 
 module Octofart
   extend SingleForwardable
