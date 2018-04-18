@@ -1,8 +1,14 @@
-# Octofart
+# Octofart :dash:
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/octofart`. To experiment with that code, run `bin/console` for an interactive prompt.
+Octofart (Octokit - Find And Replace Text) can act as a bot that automates bulk update of code from all repositories within your organization. :dash:
 
-TODO: Delete this and the text above, and describe your gem
+## Workflow
+
+- User will provide a JSON file that maps the expected changes which will be applied in all repositories.
+- Octofart takes advantage of Github API to perform full text search of the code.
+- Response will be parsed and files that matches the mapping will be updated.
+- Octofart will commit the changes, push it on a new branch, and create a pull request.
+- The merging of PR can be done by a developer to ensure that the changes are correct.
 
 ## Installation
 
@@ -20,9 +26,21 @@ Or install it yourself as:
 
     $ gem install octofart
 
-## Usage
+## Configuration
 
-TODO: Write usage instructions here
+```ruby
+Octofart.configure do |config|
+  config.base_branch  = "master"
+  config.github_token = ENV['GITHUB_USER_TOKEN']
+  config.max_retries  = 3
+end
+```
+
+## Tests
+
+```
+$ bundle exec rspec spec
+```
 
 ## Development
 
@@ -32,7 +50,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/octofart.
+Bug reports and pull requests are welcome on GitHub at https://github.com/rbmrclo/octofart.
 
 ## License
 
