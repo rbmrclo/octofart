@@ -11,6 +11,7 @@ module Octofart
       @defaults ||= {
          base_branch: "master",
         github_token: nil,
+         max_retries: 1,
       }
     end
 
