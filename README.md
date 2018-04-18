@@ -40,7 +40,7 @@ Or install it yourself as:
 
 ```ruby
 Octofart.configure do |config|
-  config.base_branch  = "master"
+  config.candidate_base_branches = ["develop", "master"]
   config.github_token = ENV['GITHUB_USER_TOKEN']
   config.max_retries  = 3
 end

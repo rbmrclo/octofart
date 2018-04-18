@@ -9,9 +9,9 @@ module Octofart
 
     def defaults
       @defaults ||= {
-         base_branch: "master",
         github_token: nil,
-         max_retries: 1,
+        max_retries: 1,
+        candidate_base_branches: ["develop", "master"],
       }
     end
 

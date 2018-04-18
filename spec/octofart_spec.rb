@@ -8,12 +8,12 @@ RSpec.describe Octofart do
 
     it "enables base branch and github token configurable" do
       Octofart.configure do |config|
-        config.base_branch  = "develop"
+        config.candidate_base_branches = ["develop"]
         config.github_token = token
         config.max_retries  = 3
       end
 
-      expect(Octofart.base_branch).to eq("develop")
+      expect(Octofart.candidate_base_branches).to eq(["develop"])
       expect(Octofart.github_token).to eq(token)
       expect(Octofart.max_retries).to eq(3)
     end
