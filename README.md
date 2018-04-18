@@ -1,6 +1,16 @@
 # Octofart :dash:
 
+As we continuously create new repositories in our organization, there can be
+a time when you need to update a single line of code across multiple
+repositories, hence, this gem aims to solve that problem.
+
 Octofart (Octokit - Find And Replace Text) can act as a bot that automates bulk update of code from all repositories within your organization. :dash:
+
+## Sample use cases
+
+- Updating hard coded ruby versions of multiple repositories
+- Updating typo errors
+- Renaming class names (i.e `s/FactoryGirl/FactoryBot`)
 
 ## Workflow
 
