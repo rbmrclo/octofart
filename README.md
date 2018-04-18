@@ -8,7 +8,7 @@ Octofart (Octokit - Find And Replace Text) can act as a bot that automates bulk 
 
 ## Sample use cases
 
-- Updating hard coded ruby versions of multiple repositories
+- Updating hard coded ruby versions from multiple repositories
 - Updating typo errors
 - Renaming class names (i.e `s/FactoryGirl/FactoryBot`)
 
