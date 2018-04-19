@@ -15,11 +15,11 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib", "spec"]
 
-  spec.add_dependency "octokit", "~> 4.8.0"
+  spec.add_runtime_dependency 'octokit', '~> 4.8', '>= 4.8.0'
 
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.2"
-  spec.add_development_dependency "webmock", "~> 3.3.0"
-  spec.add_development_dependency "pry"
+  spec.add_development_dependency 'webmock', "~> 3.3", ">= 3.3.0"
+  spec.add_development_dependency "pry", "~> 0.11", ">= 0.11.3"
 end
