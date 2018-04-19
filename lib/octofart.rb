@@ -2,12 +2,23 @@ require "octokit"
 require "octofart/version"
 require "octofart/config"
 require "octofart/client"
-require "octofart/parser"
+require "octofart/singleton_class"
+require "octofart/task_runner"
+
+require "octofart/tasks/create_branch"
+require "octofart/tasks/commits"
+require "octofart/tasks/pull_request"
+require "octofart/tasks/update_file"
+require "octofart/tasks/data_mapping"
+require "octofart/tasks/branch_mapping"
 
 module Octofart
   extend SingleForwardable
+  extend SingletonClass
 
-  def_delegators :config, :base_branch, :github_token, :max_retries
+  def_delegators :config, :unique_head_branch_name,
+                          :github_token,
+                          :max_retries
 
   def self.client
     @client ||= Client.new(
