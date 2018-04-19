@@ -10,8 +10,6 @@ module Octofart
             new_content = old_content.gsub(task[:find], task[:replace])
 
             task[:blob_sha] = Octofart.client.create_blob(repo_name, Base64.encode64(new_content), "base64")
-
-            puts "Updating file from #{old_content} to #{new_content}..."
           end
         end
 

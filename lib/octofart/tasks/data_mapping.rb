@@ -45,7 +45,7 @@ module Octofart
         puts "Registering task for #{options[:repo_name]}..."
 
         task = tasks.find { |t| t[:id] == options[:task_id] }
-        repositories[options[:repo_name]][:tasks] << task.merge!(path: options[:path])
+        repositories[options[:repo_name]][:tasks] << task.merge(path: options[:path])
 
         puts task
       end
