@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     octofart (0.1.0)
-      octokit (~> 4.8.0)
+      octokit (~> 4.8, >= 4.8.0)
 
 GEM
   remote: https://rubygems.org/
@@ -53,10 +53,10 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.16)
   octofart!
-  pry
+  pry (~> 0.11, >= 0.11.3)
   rake (~> 10.0)
   rspec (~> 3.2)
-  webmock (~> 3.3.0)
+  webmock (~> 3.3, >= 3.3.0)
 
 BUNDLED WITH
    1.16.1
