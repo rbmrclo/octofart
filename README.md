@@ -6,7 +6,7 @@ repositories, hence, this gem aims to solve that problem.
 
 Octofart (Octokit - Find And Replace Text) provides a nice looking DSL that automates bulk update of code from all repositories within your organization.
 
-**WARNING: Use at your own risk! If improperly used, it might send humongous pull requests to different repositories abnormally.
+**WARNING: Use at your own risk! If improperly used, it might send humongous pull requests to different repositories abnormally.**
 
 ## Sample use cases
 
