@@ -4,7 +4,7 @@ As we continuously create new repositories in our organization, there can be
 a time when you need to update a single line of code across multiple
 repositories, hence, this gem aims to solve that problem.
 
-Octofart (Octokit - Find And Replace Text) provides a nice looking DSL that automates bulk update of code from all repositories within your organization.
+Octofart (Octokit - Find And Replace Text) provides a DSL that executes a bulk update of code from all repositories within your organization.
 
 **:warning: WARNING: Use at your own risk! If improperly used, it might send humongous pull requests to different repositories abnormally.**
 
@@ -13,28 +13,6 @@ Octofart (Octokit - Find And Replace Text) provides a nice looking DSL that auto
 - Updating hard-coded ruby versions from multiple repositories (i.e `s/2.4.2/2.5.0`)
 - Updating typo errors
 - Renaming class names (i.e `s/FactoryGirl/FactoryBot`)
-
-## DSL
-
-```ruby
-Octofart.workflow {
-  organization "quipper"
-
-  task find: "FactoryGirl",
-       replace: "FactoryBot",
-       message: "Updates FactoryGirl class names to FactoryBot"
-
-  # You can add as many commits as you want
-  task find: "git ocmmit",
-       replace: "git commit",
-       message: "Fixes typo errors of `git commit` from bash scripts"
-
-  pull_request title: "Bulk update ",
-               body: "Please Review, Onii-chan!",
-               branch_name: "rbmrclo-#{Time.now.to_i}"
-}
-
-```
 
 ## Workflow
 
@@ -67,6 +45,29 @@ Octofart.configure do |config|
   config.max_retries  = 3
 end
 ```
+
+## DSL
+
+```ruby
+Octofart.workflow {
+  organization "quipper"
+
+  task find: "FactoryGirl",
+       replace: "FactoryBot",
+       message: "Updates FactoryGirl class names to FactoryBot"
+
+  # You can add as many commits as you want
+  task find: "git ocmmit",
+       replace: "git commit",
+       message: "Fixes typo errors of `git commit` from bash scripts"
+
+  pull_request title: "Bulk update ",
+               body: "Please Review, Onii-chan!",
+               branch_name: "rbmrclo-#{Time.now.to_i}"
+}
+
+```
+
 
 ## Tests
 
