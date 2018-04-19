@@ -6,6 +6,8 @@ repositories, hence, this gem aims to solve that problem.
 
 Octofart (Octokit - Find And Replace Text) provides a nice looking DSL that automates bulk update of code from all repositories within your organization.
 
+**WARNING: Use at your own risk! If improperly used, it might send humongous pull requests to different repositories abnormally.
+
 ## Sample use cases
 
 - Updating hard-coded ruby versions from multiple repositories (i.e `s/2.4.2/2.5.0`)
@@ -77,6 +79,12 @@ $ bundle exec rspec spec
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+
+## Roadmap
+
+- Address failure scenarios (i.e when no organization supplied)
+- Implement asynchronous execution per tasks (to avoid abuse rate limits)
+- Thorough testing
 
 ## Contributing
 
