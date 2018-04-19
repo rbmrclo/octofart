@@ -4,17 +4,38 @@ As we continuously create new repositories in our organization, there can be
 a time when you need to update a single line of code across multiple
 repositories, hence, this gem aims to solve that problem.
 
-Octofart (Octokit - Find And Replace Text) can act as a bot that automates bulk update of code from all repositories within your organization.
+Octofart (Octokit - Find And Replace Text) provides a nice looking DSL that automates bulk update of code from all repositories within your organization.
 
 ## Sample use cases
 
-- Updating hard coded ruby versions from multiple repositories
+- Updating hard-coded ruby versions from multiple repositories (i.e `s/2.4.2/2.5.0`)
 - Updating typo errors
 - Renaming class names (i.e `s/FactoryGirl/FactoryBot`)
 
+## DSL
+
+```ruby
+Octofart.workflow {
+  organization "quipper"
+
+  task find: "FactoryGirl",
+       replace: "FactoryBot",
+       message: "Updates FactoryGirl class names to FactoryBot"
+
+  # Optional
+  task find: "git ocmmit",
+       replace: "git commit",
+       message: "Fixes typo errors of `git commit` from bash scripts"
+
+  pull_request title: "Bulk update ",
+               body: "Please Review, Onii-chan!",
+               branch_name: "rbmrclo-#{Time.now.to_i}"
+}
+
+```
+
 ## Workflow
 
-- User will provide a JSON file that maps the expected changes which will be applied in all repositories.
 - Octofart takes advantage of Github API to perform full text search of the code.
 - Response will be parsed and files that matches the mapping will be updated.
 - Octofart will commit the changes, push it on a new branch, and create a pull request.
@@ -40,7 +61,6 @@ Or install it yourself as:
 
 ```ruby
 Octofart.configure do |config|
-  config.candidate_base_branches = ["develop", "master"]
   config.github_token = ENV['GITHUB_USER_TOKEN']
   config.max_retries  = 3
 end
