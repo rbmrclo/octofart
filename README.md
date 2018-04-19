@@ -50,7 +50,7 @@ end
 
 ```ruby
 Octofart.workflow {
-  organization "quipper"
+  organization "pinoynumba1"
 
   task find: "FactoryGirl",
        replace: "FactoryBot",
