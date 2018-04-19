@@ -22,7 +22,7 @@ Octofart.workflow {
        replace: "FactoryBot",
        message: "Updates FactoryGirl class names to FactoryBot"
 
-  # Optional
+  # You can add as many commits as you want
   task find: "git ocmmit",
        replace: "git commit",
        message: "Fixes typo errors of `git commit` from bash scripts"
