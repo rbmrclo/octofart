@@ -83,9 +83,10 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Roadmap
 
-- Address failure scenarios (i.e when no organization supplied)
-- Implement asynchronous execution per tasks (to avoid abuse rate limits)
-- Thorough testing
+- [ ] Address failure scenarios (i.e when no organization supplied)
+- [ ] Implement asynchronous execution per tasks (to avoid abuse rate limits)
+- [ ] Testing coverage
+- [ ] Refactor / Cleanup code
 
 ## Contributing
 
