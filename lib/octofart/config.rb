@@ -11,7 +11,7 @@ module Octofart
       @defaults ||= {
         github_token: nil,
         max_retries: 1,
-        candidate_base_branches: ["develop", "master"],
+        unique_head_branch_name: "find-and-replace-text"
       }
     end
 
